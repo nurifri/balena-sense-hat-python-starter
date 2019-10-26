@@ -5,9 +5,10 @@ ENV INITSYSTEM on
 RUN apt-get update && apt-get install -yq \
   python3 \
   python3-sense-hat \
-  pip3 install skimage \
+  python3-pip \
   wget && \
-  apt-get clean && rm -rf /var/lib/apt/lists/*
+  apt-get clean && rm -rf /var/lib/apt/lists/* && \
+  python3 -m pip install pillow imageio
 
 COPY . /usr/src/app
 WORKDIR /usr/src/app
