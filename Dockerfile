@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -yq \
   python3-pip \
   wget && \
   apt-get clean && rm -rf /var/lib/apt/lists/* && \
-  python3 -m pip install imageio
+  python3 -m pip install pillow imageio
 
 COPY . /usr/src/app
 WORKDIR /usr/src/app
