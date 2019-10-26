@@ -3,12 +3,12 @@ FROM resin/raspberrypi3-debian:latest
 ENV INITSYSTEM on
 
 RUN apt-get update && apt-get install -yq \
-  python3.6 \
+  python3 \
   python3-sense-hat \
   python3-pip \
   wget && \
   apt-get clean && rm -rf /var/lib/apt/lists/* && \
-  python3 -m pip install scikit-image
+  python3 -m pip install 'scikit-image<0.15'
 
 COPY . /usr/src/app
 WORKDIR /usr/src/app
